@@ -8,20 +8,12 @@ import Link from 'next/link';
 const NAV_ITEMS = [
   {
     label: 'Home',
-    page: 'home',
+    page: '/',
   },
   {
     label: 'About',
     page: 'about',
   },
-  {
-    label: 'Projects',
-    page: 'projects',
-  },
-  {
-    label: 'Blogs',
-    page: 'blogs',
-  }
 ];
 
 export const SOCIAL_ITEMS = [
@@ -33,14 +25,14 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <header className='w-full h-20'>
+    <header className='w-full h-20 z-50'>
       <div className='flex justify-between items-center w-full h-full py-4 flex-row'>
         <p>Yassir Hartani</p>
         <div>
           <ul className="hidden md:flex md:flex-row">
             {NAV_ITEMS.map((item, index) => (
-              <Link href="/" key={index}>
-                <li className='ml-10 text-sm hover:text-gray-400 '>{item.label}</li>
+              <Link href={`/${item.page}`} key={index}>
+                <li className='ml-10 font-semibold text-sm hover:text-gray-400 '>{item.label}</li>
               </Link>
             ))}
           </ul>
@@ -50,7 +42,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className={navbar ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70' : ''}>
-        <div className={navbar ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10' : 'fixed left-[-100%] top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10'}>
+        <div className={navbar ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-white p-10' : 'fixed left-[-100%] top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10'}>
           <div className='flex w-full items-center justify-between'>
             <p>Yassir Hartani</p>
             <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer' onClick={() => setNavbar(!navbar)}>

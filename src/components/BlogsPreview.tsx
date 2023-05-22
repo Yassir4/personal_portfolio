@@ -6,11 +6,19 @@ import Link from 'next/link';
 import Date from './Date';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
-const getPostMetaData = () => {
+type TPosts = {
+  date: string
+  title: string
+  preview: string
+  id: string
+}[]
+
+const getPostMetaData = (): TPosts => {
   
   const files = fs.readdirSync(postsDirectory);
-    
-  const allPostsData = files.map((fileName) => {
+  
+  // @ts-ignore
+  const allPostsData: TPosts = files.map((fileName) => {
     const id = fileName.replace(/\.md$/, '');
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -21,6 +29,8 @@ const getPostMetaData = () => {
       ...matterResult.data,
     };
   });
+
+  
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
       return 1;

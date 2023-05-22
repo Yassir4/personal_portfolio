@@ -8,18 +8,22 @@ import BlogImage from '@/components/BlogImage';
 
 
 
-const getPostContent = async (slug: string) => {
+const getPostContent = async (slug: string): Promise<{
+  contentHtml: string;
+  date: string
+  title: string
+}> => {
   const folder = 'posts/';
   const file = `${folder}${slug}.md`;
   const content = fs.readFileSync(file, 'utf-8');
 
   const matterResult = matter(content);
-
+  // @ts-ignore
   return {contentHtml: matterResult.content, ...matterResult.data} ;
 };
 
   
-const Article: React.FC<{ params: { slug: string } }> = async ({params}) => {
+const Article = async ({params}: {params: { slug: string } }) => {
   const postData = await getPostContent(params.slug);
   
   return (
@@ -31,9 +35,12 @@ const Article: React.FC<{ params: { slug: string } }> = async ({params}) => {
       <article className='prose antialiased font-sans text-base'>
         <ReactMarkdown components={{
           img: (props) => {
-            return(
-              <BlogImage src={props.src} alt={props.alt}/>
-            );},
+            if(props.src)
+              return(
+                <BlogImage src={props.src} alt={props.alt}/>
+              );
+            return null;
+          }
         }}>
           {postData.contentHtml}
         </ReactMarkdown>
