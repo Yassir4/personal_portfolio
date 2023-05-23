@@ -10,7 +10,7 @@ const Blog: React.FC<Props> = () => {
         Hi There!
       </h1>
       <div className='mt-8 space-y-7 text-base text-zinc-600'>
-        <p>I am Yassir Hartani a FrontEnd developer, primarily working with React Native and Expo.
+        <p>I am Yassir Hartani a FrontEnd developer, primarily working with Javascript | React | React Native | NextJs and Expo.
           I live in Casablanca, but I have worked mostly with remote-first teams, where I had the chance to meet and learn from developers around the globe.
         </p>
         <p>
