@@ -11,8 +11,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="mx-7 px-8 bg-zinc-50 min-h-screen flex justify-center ">
-        <div className='bg-white ring-zinc-100 max-w-6xl lg:px-8 px-9 min-h-screen inset-0 flex flex-col justify-between'>
-          <div>
+        <div className='bg-white ring-zinc-100  w-[60rem] lg:px-8 px-9 min-h-screen inset-0 flex flex-col justify-between'>
+          <div className='w-full'>
             <Navbar />
             {children}
           </div>

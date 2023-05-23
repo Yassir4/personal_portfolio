@@ -4,7 +4,6 @@ import BlogsPreview from '@/components/BlogsPreview';
 export default function Home() {
   return (
     <div>
-
       <main className='flex justify-center align-center'>
         <title>Yassir | Front-End Developer</title>
         <div >
