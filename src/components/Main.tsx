@@ -9,7 +9,7 @@ const Main: React.FC<Props> = () => {
   return (
     <div className='my-20 w-full ml-10 md:ml-15'>
       <div className='w-[60%] sm:w-[90%] md:w-[70%]'>
-        <h1 className="my:20 text-3xl font-bold tracking-tight text-zinc-800 sm:text-1xl">Hi, I’m Yassir.</h1>
+        <h1 className="my:20 text-3xl font-bold tracking-tight text-zinc-800 sm:text-1xl">Hi, I&apos;m Yassir.</h1>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">Front End Developer based in Morocco. I am passionate about creating high-quality web and mobile applications that meet the needs of clients and end-users. </p>
       </div>
       

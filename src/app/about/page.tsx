@@ -17,7 +17,7 @@ const Blog: React.FC<Props> = () => {
           Currently I am a FrontEnd developer at <a href='https://google.com/' className='text-blue-400'>@Groovehq</a> where I am responsible for developing and maintaining a cross-platform application.
         </p>
         <p>
-          I like to write about some stuff I learned or that I find interesting, it also helps me improve my thinking and my communication skills while learning more about the topic I'm writing about.
+          I like to write about some stuff I learned or that I find interesting, it also helps me improve my thinking and my communication skills while learning more about the topic I&apos;m writing about.
         </p>
         <p>If you wanna connect, find me on <a href='https://google.com/' className='text-blue-400'>Twitter</a> ,<a href='https://google.com/' className='text-blue-400'>GitHub</a>,<a href='https://google.com/' className='text-blue-400'>LinkedIn</a>, or just send me an email to hartaniyassir@gmail.com.</p>
       </div>
